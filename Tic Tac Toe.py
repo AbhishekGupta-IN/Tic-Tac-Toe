@@ -36,9 +36,13 @@ def game():
 
     for i in range(10):
         print_board(theBoard)
-        print(turn + "'s Turn. Move to?")
+        print(turn + "'s Turn. Move to? (Valid input: 1-9)")
 
         move = input()
+
+        if move not in board_keys:
+            print("Please enter a number between 1-9");
+            continue
 
         if theBoard[move] == ' ':
             theBoard[move] = turn
